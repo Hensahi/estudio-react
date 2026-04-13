@@ -255,3 +255,30 @@ export const Contador = ({ num }) => {
 - Como se puede ver, dentro de la funcion que maneja el click es donde usamos el metodo que definimos para modificar la variable.
 
 # Condicionales y Ternarios
+
+- Los ternarios son if-else en formato reducido, sirven para renderizar basado en condiciones:
+
+```jsx
+
+const Items = ({descripcion, visto}) => {
+  return(<li>{descripcion} {visto ? "✅" : ⛔} </li>)
+}
+
+export const ListApp = () => {
+  return (
+    <>
+      <Items descripcion = "Una cosa" visto: false />
+      <Items descripcion = "Una cosa" visto: false />
+      <Items descripcion = "Una cosa" visto: false />
+      <Items descripcion = "Una cosa" visto: false />
+      <Items descripcion = "Una cosa" visto: false />
+      <Items descripcion = "Una cosa" visto: false />
+      <Items descripcion = "Una cosa" visto: false />
+      <Items descripcion = "Una cosa" visto: false />
+      <Items descripcion = "Una cosa" visto: false />
+      <Items descripcion = "Una cosa" visto: false />
+      <Items descripcion = "Una cosa" visto: false />
+    </>
+  )
+}
+```
