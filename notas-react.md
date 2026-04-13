@@ -2,7 +2,7 @@
 
 ### React vs React-Dom
 
-- La diferencia entre estas dos dependencias es que React es la librearia como tal y React-Dom es la libreria que nos permite convertir nuestra aplicacion en una aplicacion web.
+- La diferencia entre estas dos dependencias es que React es la libreria como tal y React-Dom es la libreria que nos permite convertir nuestra aplicacion en una aplicacion web.
 
 ### Que es JSX
 
@@ -15,7 +15,7 @@
 
 # Variables en JSX
 
-- Es recomendable declarar las variables fuera del componente (funcion), es decir, en el ambito global, para de esa manera evitar que las variables se vuelvan a crear cada vez que el componente es renderizado. Esto no hace a las variables disponibles para toda la app, solo para ese componente en particular y en todas las funciones dentro de ese componente.
+- Es recomendable declarar las variables fuera del componente (funcion), es decir, en el ambito global, para asi evitar que las variables se vuelvan a crear cada vez que el componente es renderizado. Esto no hace a las variables disponibles para toda la app, solo para ese componente en particular y en todas las funciones dentro de ese componente.
 - Las variables en JSX se declaran igual que en JS, pero se llaman (utilizan) poniendo llaves y dentro de las llaves la referencia a la variable:
 
 ```jsx
@@ -107,9 +107,10 @@ createRoot(document.getElementById("root")).render(
 
 - Para agregar una especie de tipado (cuando no estamos usando TypeScript) podemos hacerlo importanto prop-types, es una libreria y no viene incluida en la instalacion del proyecto de react con vite, hay que instalarla manualmente con el comando npm i prop-types el uso de las prop-types es el siguiente:
 
-```jsx //Importante que aqui ponemos propTypes con la "p" minuscula
+```jsx 
+//Importante que aqui ponemos propTypes con la "p" minuscula
 PrimerComponente.propTypes = {
-  titulo: PropTypes.string.isRequired,
+  titulo: PropTypes.string.isRequired, // Con isRequired la hacemos obligatoria
   subtitulo: PropTypes.string, //Es opcional ya que no lleva isRequired
 };
 ```
@@ -117,7 +118,7 @@ PrimerComponente.propTypes = {
 - Podemos colocar valores por defecto para prevenir el caso de que no se envie alguna propiedad esperada, lo podemos hacer tanto en la desestructuracion de las props:
 
 ```jsx
-const Prueba => (valor = "valor de prueba"){
+const Prueba => ({valor = "valor de prueba"}  ){
   return ({valor})
 }
 ```
@@ -132,7 +133,7 @@ Prueba.defaultProps = {
 
 # Eventos
 
-- Los eventos son mecanismo por los cuales los componentes pueden reaccionar a la interaccion del usuario (click, mouse, etc...)
+- Los eventos son mecanismos por los cuales los componentes pueden reaccionar a la interaccion del usuario (click, mouse, etc...)
 - Se pueden crear funciones que contengan codigo .jsx fuera del componente como tal. La forma habitual de trabajar con los eventos en React es como se muestra a continuacion:
 
 ```jsx
@@ -223,3 +224,34 @@ export const Contador = () => {
   );
 };
 ```
+# Hooks
+
+- Un hook es una funcion especial que nos permite usar una funcion de react en un componente de tipo funcion, sirven para manejar el estado y otros componentes de react, sin necesidad de usar componentes de clase. Existen hooks nativos de reat y tambien se pueden crear hooks propios llamados custom hooks.
+
+### Estado en React:
+
+- Un estado en react es un objeto que contiene datos y representa la informacion que una interface de usuario necesita para renderizarse y funcionar correctamete. El estado es mutable y tiene todos los datos que necesita un componente para funcionar correctamente y mutar si es lo que necesita
+
+- Para modificar el estado de la app en react usamos el hook useState, para usarlo debemos declarar una constante asignando dos variables: 1 la variable a modificar, 2 el metodo que modificara la variable, encerramos estas dos variables entre llaves y la igualamos al hook useState, pasando como parametro al hook el punto de inicio de la variable que modificaremos, este puede ser: el prop que recibimos del padre o un dato ingresado manualmente:
+
+```jsx
+export const Contador = ({ num }) => {
+
+  const [contar, setContar] = useState(num);
+  const handleClick = () => {
+    setContar(contar + 1);
+  };
+  return (
+    <>
+      <h1>Contador</h1>
+      <h3>{contar}</h3>
+      <button onClick={handleClick}>Haz click!</button>
+    </>
+  );
+};
+
+```
+
+- Como se puede ver, dentro de la funcion que maneja el click es donde usamos el metodo que definimos para modificar la variable.
+
+# Condicionales y Ternarios

@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 // const FuncionExterna = () => {
 //   return <button>Soy un Boton</button>;
 // };
@@ -8,14 +10,15 @@
 // };
 
 export const Contador = ({ num }) => {
+
+  const [contar, setContar] = useState(num);
   const handleClick = () => {
-    num += 1;
-    console.log(num);
+    setContar(contar + 1);
   };
   return (
     <>
       <h1>Contador</h1>
-      <h3>{num}</h3>
+      <h3>{contar}</h3>
       <button onClick={handleClick}>Haz click!</button>
       {/* <FuncionExterna></FuncionExterna> //Llamada a la funcion externa */}
       {/* <button
