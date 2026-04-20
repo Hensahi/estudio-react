@@ -12,10 +12,11 @@
 
 - Un componente es un bloque de construccion de la interface de usuario, encapsula la logica de una parte pequeña de lo que ve el usuario, la union de todas esas partes pequeñas es lo que conforma la app
 - Cuando exportamos una funcion en particular (no haciendo export default), debemos encerrar el nombre de la funcion entre corchetes al momento de hacer la importacion en el lugar deseado.
+- Si la funcion retorna JSX ya es un componente, es decir, no necesariamente tiene que ser la funcion que se exporta fuera del archivo en concreto.
 
 # Variables en JSX
 
-- Es recomendable declarar las variables fuera del componente (funcion), es decir, en el ambito global, para asi evitar que las variables se vuelvan a crear cada vez que el componente es renderizado. Esto no hace a las variables disponibles para toda la app, solo para ese componente en particular y en todas las funciones dentro de ese componente.
+- Es recomendable declarar las variables fuera del componente (funcion), es decir, en el ambito global, para asi evitar que las variables se vuelvan a crear cada vez que el componente es renderizado. Esto no hace a las variables disponibles para toda la app, solo para ese componente en particular y en todas las funciones dentro de ese archivo.
 - Las variables en JSX se declaran igual que en JS, pero se llaman (utilizan) poniendo llaves y dentro de las llaves la referencia a la variable:
 
 ```jsx
