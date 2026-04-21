@@ -2,7 +2,8 @@
 
 ### React vs React-Dom
 
-- La diferencia entre estas dos dependencias es que React es la libreria como tal y React-Dom es la libreria que nos permite convertir nuestra aplicacion en una aplicacion web.
+- React: se encarga de crear componentes y manejar la lógica.
+- ReactDOM: se encarga de renderizar esos componentes en el navegador (DOM).
 
 ### Que es JSX
 
@@ -85,7 +86,7 @@ export const PrimerComponente = ({ titulo, subtitulo }) => {
   console.log(titulo, subtitulo);
   return (
     <>
-      <h1>Seccion de props</h1>
+      +<h1>Seccion de props</h1>
       <h3>{titulo}</h3>
       <h3>{subtitulo}</h3>
     </>
@@ -108,7 +109,7 @@ createRoot(document.getElementById("root")).render(
 
 - Para agregar una especie de tipado (cuando no estamos usando TypeScript) podemos hacerlo importanto prop-types, es una libreria y no viene incluida en la instalacion del proyecto de react con vite, hay que instalarla manualmente con el comando npm i prop-types el uso de las prop-types es el siguiente:
 
-```jsx 
+```jsx
 //Importante que aqui ponemos propTypes con la "p" minuscula
 PrimerComponente.propTypes = {
   titulo: PropTypes.string.isRequired, // Con isRequired la hacemos obligatoria
@@ -225,6 +226,7 @@ export const Contador = () => {
   );
 };
 ```
+
 # Hooks
 
 - Un hook es una funcion especial que nos permite usar una funcion de react en un componente de tipo funcion, sirven para manejar el estado y otros componentes de react, sin necesidad de usar componentes de clase. Existen hooks nativos de reat y tambien se pueden crear hooks propios llamados custom hooks.
@@ -237,7 +239,6 @@ export const Contador = () => {
 
 ```jsx
 export const Contador = ({ num }) => {
-
   const [contar, setContar] = useState(num);
   const handleClick = () => {
     setContar(contar + 1);
@@ -250,7 +251,6 @@ export const Contador = ({ num }) => {
     </>
   );
 };
-
 ```
 
 - Como se puede ver, dentro de la funcion que maneja el click es donde usamos el metodo que definimos para modificar la variable.
