@@ -1,3 +1,12 @@
+
+
+
+
 export const Lista = ({ tareas }) => {
-  return tareas.map((tarea) => {tarea.done ? <li>{tarea.texto "✅"} </li> : <li> {tarea.texto "⛔"} </li>});
+
+const listItems = tareas.map(tarea => <li key={tarea.id}>
+  Tarea #: {tarea.id} | {tarea.texto} {tarea.done ? "✅" : "⛔"}
+</li>)
+return <ul>{listItems}</ul>
 };
+
