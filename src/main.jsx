@@ -1,12 +1,13 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { Tarjeta } from "./ejercicios/Tarjeta";
-import { Lista } from "./ejercicios/Lista";
+// import { Lista } from "./ejercicios/Lista";
+import { BorrarMap } from "./ejercicios/BorrarMap";
 import "./main.css";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <Tarjeta nombre="hency lara" edad={55} profesion="vago"></Tarjeta>
+    {/* <Tarjeta nombre="hency lara" edad={55} profesion="vago"></Tarjeta>
     <Lista
       tareas={[
         { id: 1, texto: "Aprender React", done: true },
@@ -20,6 +21,7 @@ createRoot(document.getElementById("root")).render(
         { id: 9, texto: "Revisar validaciones con regex", done: false },
         { id: 10, texto: "Preparar presentación académica", done: false },
       ]}
-    ></Lista>
+    ></Lista> */}
+    <BorrarMap />
   </StrictMode>,
 );
