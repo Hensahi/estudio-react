@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { AgregarTarea } from "./componentes/AgregarTarea"
 
 const Items = ({descripcion, visto}) => {
   return(<li>{descripcion} {visto ? "✅" : "⛔"} </li>)
@@ -30,6 +31,7 @@ export const ListadoApp = () => {
   return (
     <>
     <h1>Listado de Temas</h1>
+      <AgregarTarea agregarTarea = {setArreglo} />
       <ol>
         {arreglo.map(item => <Items key={item.visto} descripcion={item.descripcion} visto={item.visto} ></Items>)}
       </ol>

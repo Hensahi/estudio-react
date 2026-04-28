@@ -11,3 +11,5 @@
 - La forma de asignar clases en jsx (react)
 
 # Formularios
+
+# Pasar datos (props) de padre a hijo
