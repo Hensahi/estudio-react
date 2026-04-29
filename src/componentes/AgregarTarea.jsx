@@ -8,15 +8,10 @@ export const AgregarTarea = ({agregarTarea}) => {
         console.log(inputValue)
     }
 
-    const envio = {
-        descripcion: inputValue,
-        done: false
-    }
-
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(inputValue);
-        agregarTarea(tarea => [...tarea, envio])
+        // console.log(inputValue);
+        agregarTarea(inputValue)
     }
   return (
     <form onSubmit={handleSubmit}>
