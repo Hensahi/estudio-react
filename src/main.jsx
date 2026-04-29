@@ -1,13 +1,11 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import {TextoColor} from "./ejercicios/TextoColor"
+import {UsersApp} from "./UsersApp"
 import "./main.css";
-import { Saludar } from "./ejercicios/Saludar";
-import { ListadoApp } from "./ListadoApp";
+
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-  
-   <ListadoApp />
+  <UsersApp />
   </StrictMode>,
 );

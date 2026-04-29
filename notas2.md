@@ -19,3 +19,12 @@
     - Se envia como prop una funcion que espera un parametro y luego desde el hijo se ejecuta esa funcion enviando el parametro, esta funcion ya ha sido definida en el padre y contiene la logica de lo que hara el padre con la informacion recibida
 
 # useEffect y Fetch
+
+- Que es json placeholder: JSONPlaceholder es una API falsa (mock) gratuita que se usa para practicar llamadas HTTP sin necesidad de tener un backend real. Básicamente: te da datos “de mentira” pero realistas para que pruebes fetch, axios, etc.
+
+- Que es useEffect: Vamos directo al grano: useEffect es el hook que usas cuando necesitas ejecutar “algo extra” fuera del render normal, Ese “algo extra” suele ser:
+
+    - Llamar una API
+    - Escuchar eventos
+    - Manipular el DOM
+    - Sincronizar datos
